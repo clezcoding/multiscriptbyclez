@@ -95,7 +95,7 @@ fi
 echo "Everything worked fine! Have a good day mate and stay safe"
 exit
 			;;
-        "Ubuntu Webserver(Apache")
+        "Ubuntu Webserver(Apache)"
 apt install ca-certificates apt-transport-https lsb-release gnupg curl nano unzip -y
 apt install software-properties-common -y
 add-apt-repository ppa:ondrej/php
