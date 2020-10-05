@@ -186,10 +186,15 @@ exit
 			;;
        "Install Wordpress")
 	  cd /var/www/html
-	  wget https://de.wordpress.org/latest-de_DE.zip
-	  unzip latest-de_DE.zip
+	  curl -O https://wordpress.org/latest.tar.gz
+	  tar -zxvf latest.tar.gz
 	  cd wordpress
-	  mv * /var/www/html
+	  cp -rf . ..
+	  cd ..
+	  rm -R wordpress
+	  cp wp-config-sample.php wp-config.php
+	  mkdir wp-content/uploads
+	  chmod 775 wp-content/uploads
 	  find . -exec chown www-data:www-data {} \;
 	  exit
 			;;
