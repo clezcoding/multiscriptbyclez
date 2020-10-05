@@ -2,7 +2,7 @@
 
 PS3='Please choose your Option:: '
 apt install nano git curl cron unzip bzip2 tar spell
-options=("Ubuntu Webserver" "Install Wordpress" "Install Lets Encrypt" "Install Teamspeak 3 Server" "Quit")
+options=("Ubuntu_Webserver" "Install Wordpress" "Install Lets Encrypt" "Install Teamspeak 3 Server" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -94,9 +94,8 @@ exit
 fi
 echo "Everything worked fine! Have a good day mate and stay safe"
 exit
-			;;
-			
-        "Ubuntu Webserver")
+			;;		
+        "Ubuntu_Webserver")
 apt install ca-certificates apt-transport-https lsb-release gnupg curl nano unzip -y
 apt install software-properties-common -y
 add-apt-repository ppa:ondrej/php
