@@ -1,7 +1,8 @@
 #!/bin/bash
 apt update&&apt upgrade
 apt install nano git curl cron unzip bzip2 tar spell
-read -p "This Script only Works with Debian 9/ Ubuntu 16.10 and higher. If you run my Script you accept you have to accept this. Please Press any Key to start :)"
+echo "THIS SCRIPT ONLY WORKS WITH DEBIAN 9/UBUNTU 16.10 OR HIGHER!!!!"
+read -p "Press [Enter] key to start backup""
 PS3='Please choose your Option: '
 options=("Debian" "Ubuntu" "Install Wordpress" "Install Lets Encrypt" "Install Teamspeak 3 Server" "Quit")
 select opt in "${options[@]}"
