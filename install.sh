@@ -1,8 +1,8 @@
 #!/bin/bash
 
-PS3='Please enter your Linux Distribution: '
+PS3='Please choose your Option:: '
 apt install nano git curl cron unzip bzip2 tar spell
-options=("Ubuntu" "Install Wordpress" "Install Lets Encrypt" "Install Teamspeak 3 Server" "Quit")
+options=("Ubuntu Webserver(Apache)" "Install Wordpress" "Install Lets Encrypt" "Install Teamspeak 3 Server" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
