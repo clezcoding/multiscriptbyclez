@@ -1,20 +1,21 @@
 #!/bin/bash
-
-PS3='Please choose your Option:: '
+apt update&&apt upgrade
 apt install nano git curl cron unzip bzip2 tar spell
-options=("Ubuntu_Webserver" "Install Wordpress" "Install Lets Encrypt" "Install Teamspeak 3 Server" "Quit")
+PS3='Please choose an Option: '
+options=("Debian" "Ubuntu" "Install Wordpress" "Install Lets Encrypt" "Install Teamspeak 3 Server" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
         "Debian")
-apt install ca-certificates apt-transport-https lsb-release gnupg curl nano unzip -y
-wget -q https://packages.sury.org/php/apt.gpg -O- | apt-key add -
-echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
+            wget -q https://packages.sury.org/php/apt.gpg -O- | apt-key add -
+			echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
 			#Update Server
 apt update
 apt upgrade
 
-
+#Packages for the Installation
+apt install ca-certificates apt-transport-https lsb-release gnupg curl nano unzip -y
+apt install nano git curl cron unzip bzip2 tar spell
 #Install Apache
 apt install apache2 -y
 #Install PHP and some important Packages
@@ -22,7 +23,6 @@ apt install php7.4 php7.4-cli php7.4-curl php7.4-gd php7.4-intl php7.4-json php7
 #Install MariaDB
 apt install mariadb-server mariadb-client -y
 #Setup MariaDB
-mysql_secure_installation
 #Install phpMyAdmin
 cd /usr/share
 wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-all-languages.zip -O phpmyadmin.zip
@@ -94,15 +94,17 @@ exit
 fi
 echo "Everything worked fine! Have a good day mate and stay safe"
 exit
-			;;		
-        "Ubuntu_Webserver")
-apt install ca-certificates apt-transport-https lsb-release gnupg curl nano unzip -y
-apt install software-properties-common -y
-add-apt-repository ppa:ondrej/php
+			;;
+        "Ubuntu")
+            apt install software-properties-common -y
+			add-apt-repository ppa:ondrej/php
 			#Update Server
 apt update
 apt upgrade
 
+#Packages for the Installation
+apt install ca-certificates apt-transport-https lsb-release gnupg curl nano unzip -y
+apt install nano git curl cron unzip bzip tar
 #Install Apache
 apt install apache2 -y
 #Install PHP and some important Packages
@@ -190,7 +192,7 @@ exit
 	  mv * /var/www/html
 	  rm -r wordpress
 	  find . -exec chown www-data:www-data {} \;
-	  exit
+	  
 			;;
 			 "Install Lets Encrypt")
 			 apt install certbot python-certbot-apache -y
