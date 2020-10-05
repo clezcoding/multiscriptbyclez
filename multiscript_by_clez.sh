@@ -1,7 +1,7 @@
 #!/bin/bash
 apt update&&apt upgrade
 apt install nano git curl cron unzip bzip2 tar spell
-PS3='Please enter your Linux Distribution: '
+PS3='Please choose your Option: '
 options=("Debian" "Ubuntu" "Install Wordpress" "Install Lets Encrypt" "Install Teamspeak 3 Server" "Quit")
 select opt in "${options[@]}"
 do
