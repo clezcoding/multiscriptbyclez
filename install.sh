@@ -7,15 +7,14 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Debian")
-            wget -q https://packages.sury.org/php/apt.gpg -O- | apt-key add -
-			echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
+apt install ca-certificates apt-transport-https lsb-release gnupg curl nano unzip -y
+wget -q https://packages.sury.org/php/apt.gpg -O- | apt-key add -
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
 			#Update Server
 apt update
 apt upgrade
 
-#Packages for the Installation
-apt install ca-certificates apt-transport-https lsb-release gnupg curl nano unzip -y
-apt install nano git curl cron unzip bzip2 tar spell
+
 #Install Apache
 apt install apache2 -y
 #Install PHP and some important Packages
@@ -23,6 +22,7 @@ apt install php7.4 php7.4-cli php7.4-curl php7.4-gd php7.4-intl php7.4-json php7
 #Install MariaDB
 apt install mariadb-server mariadb-client -y
 #Setup MariaDB
+mysql_secure_installation
 #Install phpMyAdmin
 cd /usr/share
 wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-all-languages.zip -O phpmyadmin.zip
@@ -96,15 +96,13 @@ echo "Everything worked fine! Have a good day mate and stay safe"
 exit
 			;;
         "Ubuntu")
-            apt install software-properties-common -y
-			add-apt-repository ppa:ondrej/php
+apt install ca-certificates apt-transport-https lsb-release gnupg curl nano unzip -y
+apt install software-properties-common -y
+add-apt-repository ppa:ondrej/php
 			#Update Server
 apt update
 apt upgrade
 
-#Packages for the Installation
-apt install ca-certificates apt-transport-https lsb-release gnupg curl nano unzip -y
-apt install nano git curl cron unzip bzip tar
 #Install Apache
 apt install apache2 -y
 #Install PHP and some important Packages
