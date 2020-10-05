@@ -2,7 +2,7 @@
 
 PS3='Please enter your Linux Distribution: '
 apt install nano git curl cron unzip bzip2 tar spell
-options=("Debian" "Ubuntu" "Install Wordpress" "Install Lets Encrypt" "Install Teamspeak 3 Server" "Quit")
+options=("Ubuntu" "Install Wordpress" "Install Lets Encrypt" "Install Teamspeak 3 Server" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
