@@ -10,6 +10,6 @@ Yes this Script is completely self coded :)
 How can i use this Script?
 
 Just insert this command in your Shell:
-wget https://github.com/clezcoding/multiscriptbyclez/archive/main.zip && unzip main.zip && cd multiscriptbyclez-main && chmod 777 multiscript_by_clez.sh && ./multiscript_by_clez.sh
+wget https://github.com/clezcoding/multiscriptbyclez/archive/main.zip && unzip main.zip && cd multiscriptbyclez-main && chmod 777 install.sh && ./install.sh
 
 Have Fun and Peace Out :)
