@@ -190,7 +190,7 @@ exit
 	  mv * /var/www/html
 	  rm -r wordpress
 	  find . -exec chown www-data:www-data {} \;
-	  
+	  exit
 			;;
 			 "Install Lets Encrypt")
 			 apt install certbot python-certbot-apache -y
